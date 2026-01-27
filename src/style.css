@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+
+  /* Ensure anchor targets are not hidden behind the fixed header */
+  #menu {
+    scroll-margin-top: 6rem; /* fallback - will be updated dynamically via JS to exact header height */
+  }
+
+  @media (max-width: 640px) {
+    #menu {
+      scroll-margin-top: 4.5rem;
+    }
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    /* shorter, snappier hero logo animation */
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .splash-fade-out {
+    /* slightly shorter to improve UX */
+    animation: splashFadeOut 2.4s linear forwards;
+    animation-fill-mode: forwards;
+  }
+
+  /* Give the splash a perspective so 3D translateZ looks like moving towards the viewer */
+  #splash-screen {
+    perspective: 1400px;
+    perspective-origin: 50% 50%;
+    overflow: hidden;
+    /* do not block pointer/touch events so users can scroll while animation runs */
+    pointer-events: none;
+    touch-action: auto;
+  }
+
+  /* Logo exit animation: 3D zoom towards the viewer and fade out (monotonic linear progression) */
+  .logo-exit {
+    /* slightly shorter to improve UX and avoid blocking interaction too long */
+    animation: logoExit 2.4s linear forwards;
+    animation-fill-mode: forwards;
+    will-change: transform, opacity, filter;
+    transform-origin: center center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transform: translateZ(0);
+  }
+
+  @keyframes logoExit {
+    0% {
+      transform: translateZ(0) scale(1);
+      filter: blur(0px);
+      opacity: 1;
+    }
+    60% {
+      transform: translateZ(900px) scale(6);
+      filter: blur(6px);
+      opacity: 0.35;
+    }
+    100% {
+      transform: translateZ(1600px) scale(12);
+      filter: blur(14px);
+      opacity: 0;
+    }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes splashFadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+  @keyframes blob {
+    0%, 100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+  
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(180deg);
+    }
+  }
+}
