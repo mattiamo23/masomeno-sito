@@ -15,8 +15,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Critical CSS to ensure splash overlay covers content on first paint -->
   <style>
-    body { background: #fff; }
-    /* Allow scrolling and interactions while splash animation runs */
+    body { background: #fff; overflow: hidden; }
+    /* Block scrolling until splash animation completes */
     #splash-screen{
       position:fixed;
       inset:0;
@@ -25,8 +25,6 @@
       justify-content:center;
       background:#fff;
       z-index:9999;
-      pointer-events: none; /* let scroll and clicks pass through */
-      touch-action: auto;
     }
     /* allow clicking the logo itself if needed */
     #splash-screen img{max-width:60vw; width:auto; height:auto; display:block; pointer-events: auto;}

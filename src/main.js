@@ -204,6 +204,9 @@ function renderMenu(filterCategory = 'all') {
 
 // Splash screen
 window.addEventListener('load', () => {
+  // Ensure page starts at top
+  window.scrollTo(0, 0);
+  
   setTimeout(() => {
     const splashScreen = document.getElementById('splash-screen');
     const splashLogo = splashScreen ? splashScreen.querySelector('img') : null;
@@ -215,6 +218,7 @@ window.addEventListener('load', () => {
       // Prefer reduced-motion users: skip animation
       if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         if (splashScreen) splashScreen.style.display = 'none';
+        document.body.style.overflow = '';
       } else {
         const heroLogo = document.getElementById('hero-logo');
         if (heroLogo) {
@@ -243,17 +247,9 @@ window.addEventListener('load', () => {
 
           // mobile/desktop tuned timings and GPU-friendly transforms
           const isMobile = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
-          const animationDuration = isMobile ? 600 : 800; // ms
+          const animationDuration = isMobile ? 800 : 800; // ms (same duration for consistency)
           const earlyRevealMs = isMobile ? 120 : 0; // small early reveal on mobile to avoid paint lag
           const revealDelay = Math.max(0, animationDuration - earlyRevealMs);
-
-          // If hero logo is off-screen on mobile, bring it into view quickly (no smooth scroll to avoid delays)
-          if (isMobile) {
-            const r = heroLogo.getBoundingClientRect();
-            if (r.top > window.innerHeight || r.bottom < 0) {
-              heroLogo.scrollIntoView({ behavior: 'auto', block: 'center' });
-            }
-          }
 
           // set up transition and trigger it (use translate3d for GPU acceleration)
           splashLogo.style.willChange = 'transform';
@@ -292,6 +288,8 @@ window.addEventListener('load', () => {
                 if (splashScreen) splashScreen.style.display = 'none';
               }, 20);
             }
+            // Re-enable scrolling
+            document.body.style.overflow = '';
             splashLogo.removeEventListener('transitionend', onTransitionEnd);
           };
           splashLogo.addEventListener('transitionend', onTransitionEnd);
@@ -308,6 +306,8 @@ window.addEventListener('load', () => {
               splashScreen.style.visibility = 'hidden';
               setTimeout(() => { if (splashScreen) splashScreen.style.display = 'none'; }, 20);
             }
+            // Re-enable scrolling (fallback)
+            document.body.style.overflow = '';
             splashLogo.removeEventListener('transitionend', onTransitionEnd);
             clearTimeout(fallbackTimeout);
           }, fallbackTimeoutMs);
@@ -315,6 +315,7 @@ window.addEventListener('load', () => {
           // no hero logo found — hide splash after short delay
           setTimeout(() => {
             if (splashScreen) splashScreen.style.display = 'none';
+            document.body.style.overflow = '';
           }, 600);
         }
       }
@@ -322,6 +323,7 @@ window.addEventListener('load', () => {
       // fallback if no logo element
       setTimeout(() => {
         if (splashScreen) splashScreen.style.display = 'none';
+        document.body.style.overflow = '';
       }, 1200);
     }
   }, 2000);
