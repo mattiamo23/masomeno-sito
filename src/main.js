@@ -1,5 +1,11 @@
 import './style.css'
 
+// Helper function to get correct image path
+const getImagePath = (path) => {
+  const base = import.meta.env.BASE_URL || '/';
+  return base + path.replace(/^\//, '');
+};
+
 // Menu data
 const menuItems = [
   // PIZZE CLASSICHE
@@ -131,7 +137,7 @@ function renderMenu(filterCategory = 'all') {
     menuCard.innerHTML = `
       <div class="relative overflow-hidden bg-gray-200 aspect-square">
         <img 
-          src="${item.image}" 
+          src="${getImagePath(item.image)}" 
           alt="${item.name}" 
           class="w-full h-full object-cover"
           onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23f3f4f6%22 width=%22400%22 height=%22400%22/%3E%3Ctext fill=%22%23dd2b1c%22 font-family=%22Arial%22 font-size=%2220%22 font-weight=%22bold%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3E${item.name}%3C/text%3E%3C/svg%3E'"
