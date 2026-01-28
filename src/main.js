@@ -204,8 +204,9 @@ function renderMenu(filterCategory = 'all') {
 
 // Splash screen
 window.addEventListener('load', () => {
-  // Ensure page starts at top
+  // Ensure page starts at top and block scrolling
   window.scrollTo(0, 0);
+  document.body.style.overflow = 'hidden';
   
   setTimeout(() => {
     const splashScreen = document.getElementById('splash-screen');
