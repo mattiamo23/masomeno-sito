@@ -97,6 +97,22 @@
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
+  
+  /* Recommended badge styles */
+  .recommended-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .recommended-tooltip {
+    z-index: 20;
+  }
+  
+  /* Ensure tooltip is above other elements */
+  .recommended-badge-container:hover .recommended-tooltip {
+    z-index: 30;
+  }
 
   @keyframes fadeIn {
     from {

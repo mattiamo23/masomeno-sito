@@ -32,7 +32,7 @@ const menuItems = [
   { id: 20, name: 'Capricciosa', description: 'Pomodoro, mozzarella, prosciutto cotto, funghi freschi, carciofi', price: '9.00', category: 'Pizze Classiche', image: '/pizze/capricciosa.jpeg' },
   { id: 21, name: 'Quattro Stagioni', description: 'Pomodoro, mozzarella, prosciutto cotto, funghi freschi, carciofi, olive', price: '9.00', category: 'Pizze Classiche', image: '/pizze/quattro-stagioni.jpeg' },
   { id: 22, name: 'Calzone Nutella', description: 'Nutella', price: '7.00', category: 'Pizze Classiche', image: '/pizze/calzone-nutella.jpg' },
-  { id: 23, name: 'Calzone Nutella e Cocco', description: 'Nutella e cocco', price: '7.50', category: 'Pizze Classiche', image: '/pizze/calzone-nutella-cocco.jpeg' },
+  { id: 23, name: 'Calzone Nutella e Cocco', description: 'Nutella e cocco', price: '7.50', category: 'Pizze Classiche', image: '/pizze/calzone-nutella-cocco.jpeg', recommended: true },
   
   // PIZZE SPECIALI
   { id: 24, name: 'Americana', description: 'Pomodoro, mozzarella, wurstel, patatine fritte*', price: '10.00', category: 'Pizze Speciali', image: '/pizze/americana.jpeg' },
@@ -43,7 +43,7 @@ const menuItems = [
   { id: 28, name: 'London', description: 'Pomodoro, mozzarella, bacon, patatine fritte*', price: '10.00', category: 'Pizze Speciali', image: '/pizze/london.jpeg' },
   { id: 29, name: 'Lucifero', description: 'Pomodoro, mozzarella, salame piccante, salsiccia, peperoni, salsa piccante', price: '10.50', category: 'Pizze Speciali', image: '/pizze/lucifero.jpeg' },
   { id: 30, name: 'Messicana', description: 'Pomodoro, mozzarella, salsiccia, patatine fritte*', price: '10.00', category: 'Pizze Speciali', image: '/pizze/messicana.png' },
-  { id: 31, name: 'Pizza Kebab', description: 'Pomodoro, mozzarella, kebab di tacchino*, insalata, cipolla, pendolini, salsa yogurt', price: '12.00', category: 'Pizze Speciali', image: '/pizze/kebab.jpeg' },
+  { id: 31, name: 'Pizza Kebab', description: 'Pomodoro, mozzarella, kebab di tacchino*, insalata, cipolla, pendolini, salsa yogurt', price: '12.00', category: 'Pizze Speciali', image: '/pizze/kebab.jpeg', recommended: true },
   { id: 32, name: 'Pizza Pazza', description: 'Pomodoro, mozzarella, cotto, wurstel, salame piccante, salsiccia', price: '11.00', category: 'Pizze Speciali', image: '/pizze/pazza.jpeg' },
   { id: 33, name: 'Sportiva', description: 'Pomodoro, mozzarella, prosciutto crudo, rucola, grana', price: '11.00', category: 'Pizze Speciali', image: '/pizze/sportiva.jpeg' },
   { id: 34, name: 'Vegetariana', description: 'Mozzarella, pendolini, melanzane*, zucchine*, funghi freschi', price: '9.00', category: 'Pizze Speciali', image: '/pizze/vegetariana.jpeg' },
@@ -57,7 +57,7 @@ const menuItems = [
   { id: 41, name: 'Mas Burger', description: 'Hamburger con doppia carne', price: '10.50', category: 'Panini', image: '/panini/mas-burger.jpeg' },
   { id: 42, name: 'Mas Cheeseburger', description: 'Cheeseburger con doppia carne', price: '11.00', category: 'Panini', image: '/panini/mas-cheeseburger.jpeg' },
   { id: 43, name: 'Mas Bacon Burger', description: 'Bacon burger con doppia carne', price: '11.50', category: 'Panini', image: '/panini/mas-bacon-burger.jpeg' },
-  { id: 44, name: 'Mas Bacon Cheeseburger', description: 'Bacon cheeseburger con doppia carne', price: '12.00', category: 'Panini', image: '/panini/mas-bacon-cheeseburger.jpeg' },
+  { id: 44, name: 'Mas Bacon Cheeseburger', description: 'Bacon cheeseburger con doppia carne', price: '12.00', category: 'Panini', image: '/panini/mas-bacon-cheeseburger.jpeg', recommended: true },
   { id: 40, name: 'Chicken Burger', description: 'Cotoletta di pollo, pomodoro, insalata, ketchup, maionese', price: '9.00', category: 'Panini', image: '/panini/chicken-burger.jpeg' },
   { id: 45, name: 'Hot Dog', description: 'Wurstel, ketchup, maionese, senape', price: '7.00', category: 'Panini', image: '/panini/hot-dog.jpeg' },
   { id: 46, name: 'Cheese Dog', description: 'Wurstel, fontina, ketchup, maionese, senape', price: '7.50', category: 'Panini', image: '/panini/cheese-dog.jpg' },
@@ -74,11 +74,11 @@ const menuItems = [
   { id: 53, name: 'Mozzarelle Fritte (6pz.)', description: 'Mozzarelle impanate e fritte', price: '5.00', category: 'Fritti', image: '/fritti/mozzarelle.jpeg' },
   { id: 54, name: 'Crocchette di Pollo (5pz.)', description: 'Crocchette di pollo fritte', price: '5.00', category: 'Fritti', image: '/fritti/crocchette-pollo.jpeg' },
   { id: 55, name: 'Jalapenos Cheese (3pz.)', description: 'Jalapenos ripieni di formaggio', price: '4.00', category: 'Fritti', image: '/fritti/jalapenos.jpeg' },
-  { id: 56, name: 'Crocchette di Pulled Pork (5pz)', description: 'Crocchette di pulled pork', price: '6.00', category: 'Fritti', image: '/fritti/crocchette-pork.jpeg' },
-  { id: 57, name: 'Chicken Mas Nuggets', description: '4pz', price: '5.00', category: 'Fritti', image: '/fritti/chicken-mas-nuggets-4.jpg' },
-  { id: 58, name: 'Chicken Mas Nuggets', description: '6pz', price: '6.50', category: 'Fritti', image: '/fritti/chicken-mas-nuggets-6.jpg' },
-  { id: 59, name: 'Chicken Mas Nuggets', description: '9pz', price: '9.00', category: 'Fritti', image: '/fritti/chicken-mas-nuggets-9.jpg' },
-  { id: 60, name: 'Chicken Mas Nuggets', description: '20pz', price: '17.00', category: 'Fritti', image: '/fritti/chicken-mas-nuggets-20.jpg' },
+  { id: 56, name: 'Crocchette di Pulled Pork (5pz)', description: 'Crocchette di pulled pork', price: '6.00', category: 'Fritti', image: '/fritti/crocchette-pork.jpeg', recommended: true },
+  { id: 57, name: 'Chicken Mas Nuggets', description: '4pz', price: '5.00', category: 'Fritti', image: '/fritti/chicken-mas-nuggets-4.jpg', recommended: true, recommendedPosition: 'bottom-right' },
+  { id: 58, name: 'Chicken Mas Nuggets', description: '6pz', price: '6.50', category: 'Fritti', image: '/fritti/chicken-mas-nuggets-6.jpg', recommended: true, recommendedPosition: 'bottom-right' },
+  { id: 59, name: 'Chicken Mas Nuggets', description: '9pz', price: '9.00', category: 'Fritti', image: '/fritti/chicken-mas-nuggets-9.jpg', recommended: true, recommendedPosition: 'bottom-right' },
+  { id: 60, name: 'Chicken Mas Nuggets', description: '20pz', price: '17.00', category: 'Fritti', image: '/fritti/chicken-mas-nuggets-20.jpg', recommended: true, recommendedPosition: 'bottom-right' },
   
   // BABY MENÙ
   { id: 61, name: 'Margherita Baby + Bibita', description: 'Pomodoro, mozzarella + bibita a scelta', price: '10.00', category: 'Baby Menù', image: '/baby/margherita.jpeg' },
@@ -142,6 +142,17 @@ function renderMenu(filterCategory = 'all') {
           class="w-full h-full object-cover"
           onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23f3f4f6%22 width=%22400%22 height=%22400%22/%3E%3Ctext fill=%22%23dd2b1c%22 font-family=%22Arial%22 font-size=%2220%22 font-weight=%22bold%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3E${item.name}%3C/text%3E%3C/svg%3E'"
         >
+        ${item.recommended ? `
+        <div class="recommended-badge-container absolute ${item.recommendedPosition === 'bottom-right' ? 'bottom-3 right-3' : 'top-3 left-3'} z-10">
+          <div class="recommended-badge bg-white rounded-full p-1.5 shadow-lg cursor-pointer transition-transform hover:scale-110">
+            <img src="${getImagePath('/recommended-icon.png')}" alt="Consigliato" class="w-6 h-6 lg:w-7 lg:h-7" onerror="this.parentElement.innerHTML='⭐'">
+          </div>
+          <div class="recommended-tooltip absolute ${item.recommendedPosition === 'bottom-right' ? 'right-0 bottom-full mb-2' : 'left-0 top-full mt-2'} bg-brand-red text-white px-4 py-2 rounded-lg shadow-xl whitespace-nowrap font-semibold text-sm opacity-0 pointer-events-none transition-opacity duration-200">
+            Consigliato da Dorino
+            <div class="absolute ${item.recommendedPosition === 'bottom-right' ? 'top-full right-4 border-t-[6px] border-t-brand-red' : 'bottom-full left-4 border-b-[6px] border-b-brand-red'} w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent"></div>
+          </div>
+        </div>
+        ` : ''}
         <div class="absolute top-0 right-0 bg-brand-red text-white px-3 py-1.5 text-sm lg:text-base font-bold shadow-lg rounded-full">
           ${item.price}
         </div>
@@ -158,6 +169,39 @@ function renderMenu(filterCategory = 'all') {
         <p class="menu-description hidden lg:block text-gray-600 text-sm leading-relaxed transition-all duration-300">${item.description}</p>
       </div>
     `;
+    
+    // Handle recommended badge tooltip
+    if (item.recommended) {
+      const badge = menuCard.querySelector('.recommended-badge');
+      const tooltip = menuCard.querySelector('.recommended-tooltip');
+      
+      if (badge && tooltip) {
+        // Desktop: hover to show tooltip
+        badge.addEventListener('mouseenter', () => {
+          if (window.innerWidth >= 1024) {
+            tooltip.classList.remove('opacity-0', 'pointer-events-none');
+            tooltip.classList.add('opacity-100');
+          }
+        });
+        
+        badge.addEventListener('mouseleave', () => {
+          if (window.innerWidth >= 1024) {
+            tooltip.classList.remove('opacity-100');
+            tooltip.classList.add('opacity-0', 'pointer-events-none');
+          }
+        });
+        
+        // Mobile: click to toggle tooltip
+        badge.addEventListener('click', (e) => {
+          if (window.innerWidth < 1024) {
+            e.stopPropagation();
+            tooltip.classList.toggle('opacity-0');
+            tooltip.classList.toggle('opacity-100');
+            tooltip.classList.toggle('pointer-events-none');
+          }
+        });
+      }
+    }
     
     // Toggle description and button on mobile/desktop
     let fadeOutTimer;
@@ -203,14 +247,14 @@ function renderMenu(filterCategory = 'all') {
 }
 
 // Splash screen
-window.addEventListener('load', () => {
-  // Ensure page starts at top and block scrolling
-  window.scrollTo(0, 0);
-  document.body.style.overflow = 'hidden';
+let splashAnimationCompleted = false;
+
+function completeSplashAnimation() {
+  if (splashAnimationCompleted) return;
+  splashAnimationCompleted = true;
   
-  setTimeout(() => {
-    const splashScreen = document.getElementById('splash-screen');
-    const splashLogo = splashScreen ? splashScreen.querySelector('img') : null;
+  const splashScreen = document.getElementById('splash-screen');
+  const splashLogo = splashScreen ? splashScreen.querySelector('img') : null;
 
     // start fade (we'll animate logo by shrinking it into the hero logo)
     // Note: do NOT fade the whole overlay immediately to avoid showing page white background —
@@ -296,7 +340,8 @@ window.addEventListener('load', () => {
           splashLogo.addEventListener('transitionend', onTransitionEnd);
 
           // fallback: ensure splash is removed after a maximum (animationDuration + buffer)
-          const fallbackTimeoutMs = animationDuration + 1000;
+          // Reduced timeout to prevent getting stuck
+          const fallbackTimeoutMs = animationDuration + 500;
           const fallbackTimeout = setTimeout(() => {
             clearTimeout(revealTimeout);
             if (heroLogo) {
@@ -327,8 +372,24 @@ window.addEventListener('load', () => {
         document.body.style.overflow = '';
       }, 1200);
     }
+}
+
+// Initialize splash animation
+window.addEventListener('load', () => {
+  // Ensure page starts at top and block scrolling
+  window.scrollTo(0, 0);
+  document.body.style.overflow = 'hidden';
+  
+  // Start animation after a short delay
+  setTimeout(() => {
+    completeSplashAnimation();
   }, 2000);
 });
+
+// Fallback: force animation to complete after max 4 seconds regardless of load state
+setTimeout(() => {
+  completeSplashAnimation();
+}, 4000);
 
 // Mobile menu toggle
 document.getElementById('mobile-menu-btn').addEventListener('click', () => {
