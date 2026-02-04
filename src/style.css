@@ -164,4 +164,17 @@
       transform: translateY(-20px) rotate(180deg);
     }
   }
+
+  @keyframes bounceScale {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+
+  .animate-bounce-scale {
+    animation: bounceScale 1s ease-in-out infinite;
+  }
 }

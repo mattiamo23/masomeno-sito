@@ -38,10 +38,10 @@ const menuItems = [
   { id: 24, name: 'Americana', description: 'Pomodoro, mozzarella, wurstel, patatine fritte*', price: '10.00', category: 'Pizze Speciali', image: '/pizze/americana.jpeg' },
   { id: 25, name: 'Pizza Patatine', description: 'Pomodoro, mozzarella, patatine fritte', price: '9.00', category: 'Pizze Speciali', image: '/pizze/patatine.jpeg' },
   { id: 26, name: 'Pizza Patate al Forno', description: 'Pomodoro, mozzarella, patate al forno', price: '9.00', category: 'Pizze Speciali', image: '/pizze/patate-forno.jpeg' },
-  { id: 27, name: 'Dieghex', description: 'Pomodoro, mozzarella, salsiccia, bufala, origano, olio piccante', price: '10.00', category: 'Pizze Speciali', image: '/pizze/dieghex.jpeg' },
+  { id: 27, name: 'Dieghex', description: 'Pomodoro, mozzarella, salsiccia, bufala, origano, olio piccante', price: '10.00', category: 'Pizze Speciali', image: '/pizze/dieghex.jpeg', recommended: true },
   { id: 27, name: 'Fantasia', description: 'A fantasia del Pizzaiolo', price: '11.00', category: 'Pizze Speciali', image: '/pizze/fantasia.jpeg' },
   { id: 28, name: 'London', description: 'Pomodoro, mozzarella, bacon, patatine fritte*', price: '10.00', category: 'Pizze Speciali', image: '/pizze/london.jpeg' },
-  { id: 29, name: 'Lucifero', description: 'Pomodoro, mozzarella, salame piccante, salsiccia, peperoni, salsa piccante', price: '10.50', category: 'Pizze Speciali', image: '/pizze/lucifero.jpeg' },
+  { id: 29, name: 'Lucifero', description: 'Pomodoro, mozzarella, salame piccante, salsiccia, peperoni, salsa piccante', price: '10.50', category: 'Pizze Speciali', image: '/pizze/lucifero.jpeg', recommended: true },
   { id: 30, name: 'Messicana', description: 'Pomodoro, mozzarella, salsiccia, patatine fritte*', price: '10.00', category: 'Pizze Speciali', image: '/pizze/messicana.png' },
   { id: 31, name: 'Pizza Kebab', description: 'Pomodoro, mozzarella, kebab di tacchino*, insalata, cipolla, pendolini, salsa yogurt', price: '12.00', category: 'Pizze Speciali', image: '/pizze/kebab.jpeg', recommended: true },
   { id: 32, name: 'Pizza Pazza', description: 'Pomodoro, mozzarella, cotto, wurstel, salame piccante, salsiccia', price: '11.00', category: 'Pizze Speciali', image: '/pizze/pazza.jpeg' },
@@ -53,7 +53,7 @@ const menuItems = [
   { id: 36, name: 'Hamburger', description: 'Svizzera 130g, cipolla stufata, pomodoro, insalata, ketchup, maionese', price: '7.50', category: 'Panini', image: '/panini/hamburger.jpeg' },
   { id: 37, name: 'Cheeseburger', description: 'Svizzera 130g, fontina, pomodoro, insalata, ketchup, maionese', price: '8.00', category: 'Panini', image: '/panini/cheeseburger.jpeg' },
   { id: 38, name: 'Bacon Burger', description: 'Svizzera 130g, bacon, cipolla stufata, pomodoro, insalata, ketchup, maionese', price: '8.50', category: 'Panini', image: '/panini/bacon-burger.jpeg' },
-  { id: 39, name: 'Bacon Cheeseburger', description: 'Svizzera 130g, bacon, fontina, cipolla stufata, pomodoro, insalata, ketchup, maionese', price: '9.00', category: 'Panini', image: '/panini/bacon-cheeseburger.jpeg' },
+  { id: 39, name: 'Bacon Cheeseburger', description: 'Svizzera 130g, bacon, fontina, cipolla stufata, pomodoro, insalata, ketchup, maionese', price: '9.00', category: 'Panini', image: '/panini/bacon-cheeseburger.jpeg', recommended: true },
   { id: 41, name: 'Mas Burger', description: 'Hamburger con doppia carne', price: '10.50', category: 'Panini', image: '/panini/mas-burger.jpeg' },
   { id: 42, name: 'Mas Cheeseburger', description: 'Cheeseburger con doppia carne', price: '11.00', category: 'Panini', image: '/panini/mas-cheeseburger.jpeg' },
   { id: 43, name: 'Mas Bacon Burger', description: 'Bacon burger con doppia carne', price: '11.50', category: 'Panini', image: '/panini/mas-bacon-burger.jpeg' },
@@ -61,7 +61,7 @@ const menuItems = [
   { id: 40, name: 'Chicken Burger', description: 'Cotoletta di pollo, pomodoro, insalata, ketchup, maionese', price: '9.00', category: 'Panini', image: '/panini/chicken-burger.jpeg' },
   { id: 45, name: 'Hot Dog', description: 'Wurstel, ketchup, maionese, senape', price: '7.00', category: 'Panini', image: '/panini/hot-dog.jpeg' },
   { id: 46, name: 'Cheese Dog', description: 'Wurstel, fontina, ketchup, maionese, senape', price: '7.50', category: 'Panini', image: '/panini/cheese-dog.jpg' },
-  { id: 47, name: 'Mas Dog', description: 'Wurstel, bacon, fontina, cipolla stufata, ketchup, maionese, senape', price: '8.00', category: 'Panini', image: '/panini/mas-dog.jpg' },
+  { id: 47, name: 'Mas Dog', description: 'Wurstel, bacon, fontina, cipolla stufata, ketchup, maionese, senape', price: '8.00', category: 'Panini', image: '/panini/mas-dog.jpg', recommended: true },
   
   // INSALATE
   { id: 48, name: 'Insalata Amami', description: 'Insalata verde, radicchio, rucola, mozzarella, pendolini, gamberi*, tonno', price: '9.00', category: 'Insalate', image: '/insalate/amami.jpeg' },
@@ -75,17 +75,17 @@ const menuItems = [
   { id: 54, name: 'Crocchette di Pollo (5pz.)', description: 'Crocchette di pollo fritte', price: '5.00', category: 'Fritti', image: '/fritti/crocchette-pollo.jpeg' },
   { id: 55, name: 'Jalapenos Cheese (3pz.)', description: 'Jalapenos ripieni di formaggio', price: '4.00', category: 'Fritti', image: '/fritti/jalapenos.jpeg' },
   { id: 56, name: 'Crocchette di Pulled Pork (5pz)', description: 'Crocchette di pulled pork', price: '6.00', category: 'Fritti', image: '/fritti/crocchette-pork.jpeg', recommended: true },
-  { id: 57, name: 'Chicken Mas Nuggets', description: '4pz', price: '5.00', category: 'Fritti', image: '/fritti/chicken-mas-nuggets-4.jpg', recommended: true, recommendedPosition: 'bottom-right' },
-  { id: 58, name: 'Chicken Mas Nuggets', description: '6pz', price: '6.50', category: 'Fritti', image: '/fritti/chicken-mas-nuggets-6.jpg', recommended: true, recommendedPosition: 'bottom-right' },
-  { id: 59, name: 'Chicken Mas Nuggets', description: '9pz', price: '9.00', category: 'Fritti', image: '/fritti/chicken-mas-nuggets-9.jpg', recommended: true, recommendedPosition: 'bottom-right' },
-  { id: 60, name: 'Chicken Mas Nuggets', description: '20pz', price: '17.00', category: 'Fritti', image: '/fritti/chicken-mas-nuggets-20.jpg', recommended: true, recommendedPosition: 'bottom-right' },
+  { id: 57, name: 'Chicken Mas Nuggets', description: '4pz', price: '5.00', category: 'Fritti', image: '/fritti/chicken-mas-nuggets-4.jpg', recommended: true },
+  { id: 58, name: 'Chicken Mas Nuggets', description: '6pz', price: '6.50', category: 'Fritti', image: '/fritti/chicken-mas-nuggets-6.jpg', recommended: true },
+  { id: 59, name: 'Chicken Mas Nuggets', description: '9pz', price: '9.00', category: 'Fritti', image: '/fritti/chicken-mas-nuggets-9.jpg', recommended: true },
+  { id: 60, name: 'Chicken Mas Nuggets', description: '20pz', price: '17.00', category: 'Fritti', image: '/fritti/chicken-mas-nuggets-20.jpg', recommended: true },
   
   // BABY MENÙ
-  { id: 61, name: 'Margherita Baby + Bibita', description: 'Pomodoro, mozzarella + bibita a scelta', price: '10.00', category: 'Baby Menù', image: '/baby/margherita.jpeg' },
-  { id: 62, name: 'Wurstel Baby + Bibita', description: 'Pomodoro, mozzarella, wurstel + bibita a scelta', price: '10.00', category: 'Baby Menù', image: '/baby/wurstel.jpeg' },
-  { id: 63, name: 'Baby Burger + Patatine + Bibita', description: 'Carne, ketchup, maionese, 1/2 porzione di patatine + bibita', price: '10.00', category: 'Baby Menù', image: '/baby/burger.jpeg' },
-  { id: 64, name: 'Hot Dog + Patatine + Bibita', description: 'Wurstel, ketchup, maionese, 1/2 porzione di patatine + bibita', price: '10.00', category: 'Baby Menù', image: '/baby/hot-dog.jpeg' },
-  { id: 65, name: 'Crocchette di Pollo + Patatine + Bibita', description: 'Crocchette di pollo, 1/2 porzione di patatine + bibita', price: '10.00', category: 'Baby Menù', image: '/baby/crocchette.jpeg' },
+  { id: 61, name: 'Margherita Baby + Bibita + Sorpresa', description: 'Pomodoro, mozzarella + bibita a scelta', price: '10.00', category: 'Baby Menù', image: '/baby/margherita.jpeg' },
+  { id: 62, name: 'Wurstel Baby + Bibita + Sorpresa', description: 'Pomodoro, mozzarella, wurstel + bibita a scelta', price: '10.00', category: 'Baby Menù', image: '/baby/wurstel.jpeg' },
+  { id: 63, name: 'Baby Burger + Patatine + Bibita + Sorpresa', description: 'Carne, ketchup, maionese, 1/2 porzione di patatine + bibita', price: '10.00', category: 'Baby Menù', image: '/baby/burger.jpeg' },
+  { id: 64, name: 'Hot Dog + Patatine + Bibita + Sorpresa', description: 'Wurstel, ketchup, maionese, 1/2 porzione di patatine + bibita', price: '10.00', category: 'Baby Menù', image: '/baby/hot-dog.jpeg' },
+  { id: 65, name: 'Crocchette di Pollo + Patatine + Bibita + Sorpresa', description: 'Crocchette di pollo, 1/2 porzione di patatine + bibita', price: '10.00', category: 'Baby Menù', image: '/baby/crocchette.jpeg' },
   
   // BIBITE
   { id: 66, name: 'Coca Cola Lattina 33cl', description: 'Coca Cola', price: '3.00', category: 'Bibite', image: '/bibite/coca-cola-lattina.jpeg' },
@@ -147,7 +147,7 @@ function renderMenu(filterCategory = 'all') {
           <div class="recommended-badge bg-white rounded-full p-1.5 shadow-lg cursor-pointer transition-transform hover:scale-110">
             <img src="${getImagePath('/recommended-icon.png')}" alt="Consigliato" class="w-6 h-6 lg:w-7 lg:h-7" onerror="this.parentElement.innerHTML='⭐'">
           </div>
-          <div class="recommended-tooltip absolute ${item.recommendedPosition === 'bottom-right' ? 'right-0 bottom-full mb-2' : 'left-0 top-full mt-2'} bg-brand-red text-white px-4 py-2 rounded-lg shadow-xl whitespace-nowrap font-semibold text-sm opacity-0 pointer-events-none transition-opacity duration-200">
+          <div class="recommended-tooltip absolute ${item.recommendedPosition === 'bottom-right' ? 'right-0 bottom-full mb-2' : 'left-0 top-full mt-2'} bg-brand-red text-white px-3 py-1.5 rounded-lg shadow-xl font-semibold text-xs opacity-0 pointer-events-none transition-opacity duration-200 max-w-[120px] text-center leading-tight">
             Consigliato da Dorino
             <div class="absolute ${item.recommendedPosition === 'bottom-right' ? 'top-full right-4 border-t-[6px] border-t-brand-red' : 'bottom-full left-4 border-b-[6px] border-b-brand-red'} w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent"></div>
           </div>
@@ -156,8 +156,8 @@ function renderMenu(filterCategory = 'all') {
         <div class="absolute top-0 right-0 bg-brand-red text-white px-3 py-1.5 text-sm lg:text-base font-bold shadow-lg rounded-full">
           ${item.price}
         </div>
-        <div class="absolute bottom-0 left-0 bg-brand-dark text-white px-4 py-1.5 text-sm font-semibold rounded-full">
-          <span class="lg:hidden">${item.name}</span>
+        <div class="absolute bottom-0 left-0 bg-brand-dark text-white px-4 py-1.5 ${item.name.includes('Baby Burger') || item.name.includes('Crocchette di Pollo + Patatine') ? 'text-[10px]' : (item.name === 'Chicken Mas Nuggets' || item.name === 'Crocchette di Pulled Pork (5pz)' || item.category === 'Baby Menù' ? 'text-xs' : 'text-xs')} font-semibold rounded-full">
+          <span class="lg:hidden">${item.name === 'Chicken Mas Nuggets' ? `${item.name} (${item.description})` : item.name}</span>
           <span class="hidden lg:inline">${item.category}</span>
         </div>
         <button class="order-btn hidden lg:flex items-center justify-center bg-brand-red text-white px-6 py-3 rounded-full font-semibold shadow-2xl transition-all duration-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 pointer-events-none">
@@ -165,7 +165,7 @@ function renderMenu(filterCategory = 'all') {
         </button>
       </div>
       <div class="p-5 bg-white relative">
-        <h3 class="hidden lg:block text-base lg:text-xl font-bold text-brand-dark mb-2 leading-tight">${item.name}</h3>
+        <h3 class="hidden lg:block text-base lg:text-xl font-bold text-brand-dark mb-2 leading-tight">${item.name === 'Chicken Mas Nuggets' ? `${item.name} (${item.description})` : item.name}</h3>
         <p class="menu-description hidden lg:block text-gray-600 text-sm leading-relaxed transition-all duration-300">${item.description}</p>
       </div>
     `;
